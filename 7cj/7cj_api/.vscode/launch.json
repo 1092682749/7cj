@@ -1,0 +1,133 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Application<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.Application",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CHZipUtils<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.CHZipUtils",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CheckStringUtil<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.CheckStringUtil",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DateUtil<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.DateUtil",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ExcelHelperTest<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.ExcelHelperTest",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FtpUtils<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.FtpUtils",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-GaoDEHttpClient<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.GaoDEHttpClient",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HuanXinHttpClient<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.HuanXinHttpClient",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MailUitls<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.MailUitls",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MoneyUtils<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.MoneyUtils",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MyMD5<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.MyMD5",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PasswordUtil<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.PasswordUtil",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PdfUtils<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.PdfUtils",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RandomNumber<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.RandomNumber",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Test<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.Test",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Utils<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.Utils",
+            "projectName": "7cj"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XmlUtil<7cj>",
+            "request": "launch",
+            "mainClass": "com.qy.base.utils.XmlUtil",
+            "projectName": "7cj"
+        }
+    ]
+}

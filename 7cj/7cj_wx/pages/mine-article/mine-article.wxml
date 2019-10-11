@@ -1,0 +1,27 @@
+<!--pages/mine-article/mine-article.wxml-->
+<view class='atricle-content'>
+  <view class='atricle-head'>
+    <text wx:for="{{stateData}}" class='{{selectIndex == index ? "atricle-head-text atricle-head-setext" : "atricle-head-text"}}' bindtap='changeState' data-index='{{index}}'>{{item}}</text>
+  </view>
+  <view class='atricle-head-list'>
+    <text class='atricle-one'>#</text>
+    <text class='atricle-two'>标题</text>
+    <text class='atricle-three'>浏览量</text>
+    <text class='atricle-four'>状态</text>
+    <text class='atricle-five'>查看</text>    
+  </view>
+
+  <view class='atricle-body'>
+    <view class='atricle-body-item' wx:for="{{contentList}}">
+      <text class='atricle-one'>{{index + 1}}</text>
+      <text class='atricle-two atricle-body-item-title'>{{item.atitle}}</text>
+      <text class='atricle-three'>{{item.readnumber}}</text>
+      <text class='atricle-four' wx:if="{{item.state == 1}}">通过</text>
+      <text class='atricle-four' wx:if="{{item.state == 2}}">待审核</text>      
+      <text class='atricle-four' style='color:red' wx:if="{{item.state == 3}}">未通过</text>
+      <text class='atricle-five' bindtap='goToDetail' data-id='{{item.aid}}' style='color:#1e90ff'>查看</text>
+    </view>
+  </view>
+  <!-- <view wx:if="{{noMore}}" style='margin:30rpx;font-size:28rpx;text-align: center;color:#666;'>暂无更多...</view> -->
+  <view class='article-button' bindtap='loadMore'>加载更多</view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/article/article.wxml-->
+<web-view src="http://www.7cj.top/article/writeArticle"></web-view>

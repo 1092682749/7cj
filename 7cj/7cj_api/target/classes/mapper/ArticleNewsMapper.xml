@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qy.front.dao.ArticleNewsMapper">
+  <resultMap id="BaseResultMap" type="com.qy.model.ArticleNews">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="atitle" jdbcType="VARCHAR" property="atitle" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="addtime" jdbcType="VARCHAR" property="addtime" />
+    <result column="readnumber" jdbcType="INTEGER" property="readnumber" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="isbanner" jdbcType="INTEGER" property="isbanner" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="source_from" jdbcType="VARCHAR" property="source_from" />
+    <result column="acontent" jdbcType="LONGVARCHAR" property="acontent" />
+    <result column="coverimg" jdbcType="LONGVARCHAR" property="coverimg" />
+    <result column="brief" jdbcType="LONGVARCHAR" property="brief" />
+  </resultMap>
+  <select id="findLastThousand" resultType="com.qy.model.ArticleNews">
+        select * from article_news order by id desc limit 1000
+    </select>
+</mapper>

@@ -1,0 +1,73 @@
+/* pages/mine-article/mine-article.wxss */
+.atricle-head{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.atricle-head-text{
+  font-size: 28rpx;
+  width: 110rpx;
+  text-align: center;
+  display: inline-block;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  border: 1px solid #DBDBDB;
+  color: #666;
+}
+.atricle-head-setext{
+  color: white;
+  background-color: rgb(253,156,45);
+  border-color: rgb(253,156,45);
+}
+.atricle-head-list{
+  display: flex;
+  font-size: 28rpx;
+  padding: 20rpx 10rpx;
+  justify-content: space-around;
+  background-color: rgb(244, 244, 244);
+}
+.atricle-head-list text{
+  display: inline-block;
+  text-align: center;
+}
+.atricle-body-item{
+  font-size: 28rpx;
+  padding: 30rpx 0;
+  border-bottom: 1px dashed rgb(244, 244, 244);
+}
+.atricle-body-item text{
+  display: inline-block;
+  text-align: center;
+}
+.atricle-body-item-title{
+  color: rgb(253,156,45);  
+}
+.atricle-one{
+  width: 10%;
+}
+.atricle-two{
+  width: 40%;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.atricle-three{
+  width: 20%;
+}
+.atricle-four{
+  width: 20%;
+}
+.atricle-five{
+  width: 10%;  
+}
+.article-button{
+  background-color: #eee;
+  font-size: 28rpx;
+  width: 80%;
+  margin-left: 10%;
+  padding: 24rpx 0;
+  text-align: center;
+  margin-top: 30rpx;
+}

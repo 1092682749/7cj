@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<view class='login-body'>
+  <view>
+    <text class='login-title'>会员登录</text>
+    <view class='login-input'>
+      <input placeholder='手机号' value='{{account}}' maxlength='11' bindinput='accountInput'></input>
+      <input placeholder='密码' value='{{password}}' type="password" bindinput='pwdInput'></input>    
+    </view>
+    <view bindtap='login' class='{{account && password ? "login-login":"login-unlogin"}}'>登录</view>
+    <view bindtap='goToForget' class='login-forget'>忘记密码?</view>
+  </view>
+  <view class='login-register'>还没7财经账号？<text bindtap='register'>立即注册</text></view>
+</view>

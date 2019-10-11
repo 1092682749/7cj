@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="stylesheet" href="../../public/css/banner.css">
+    <!--<link rel="stylesheet" href="../../public/css/">-->
+    <link rel="stylesheet" href="../../public/css/banner_small.css">
+
+    <link rel="stylesheet" href="../../public/css/personalCenter.css">
+    <link rel="stylesheet" href="../../public/css/personalCenter_small.css" media="all and (max-width:650px)">
+    <title>个人中心</title>
+</head>
+<body>
+<div class="topNavigation">
+    <a href='/'><img  class="logo" src="../../public/images/logo1.jpg"></a>
+</div>
+<div class="main">
+    <div class="content">
+
+        <div class="p_lf">
+            <ul>
+                <li class="user_data">
+                    <a class="p_lf_a a_show" href="personalCenter"><i></i>个人资料</a>
+                </li>
+                <li class="user_article"><a class="p_lf_a" href="personalArticle"><i></i>我的文章</a></li>
+                <!--<li class="user_info"><a class="p_lf_a" href="message"><i></i>消息中心</a></li>-->
+                <!--<li><a class="p_lf_a" href=""><i></i>绑定邮箱</a></li>-->
+                <!--<li class="user_phone"><a class="p_lf_a" href="bindPhone"><i></i>绑定手机</a></li>-->
+                <li class="user_reset"><a class="p_lf_a" href="alterPass"><i></i>修改密码</a></li>
+            </ul>
+        </div>
+
+        <div class="user_rt p_rt">
+            <h2 class="user_rt_tt">个人资料</h2>
+            <div class="user_head">
+                <div class="user_head_pic">
+                    <img id="headImg" src="../../public/imgs/zuozhe.gif"
+                         alt="">
+                    <a id="uphead">上传头像</a>
+                    <input id="head" type="file" style="display: none" value="">
+                </div>
+                <p>温馨提示:<br>1.上传图片大小不超过2MB<br>2.如果要展示完整头像，可上传<br>宽高尺寸为1：1的图片</p>
+            </div>
+            <div class="user_input">
+                <ul>
+                    <!--<li class="user_id">-->
+                    <!--<span>用户ID：</span><i>fadfff</i>-->
+                    <!--</li>-->
+
+                    <li >
+                    <span>昵称：</span>
+                    <input type="text" id="nickname" name="nickname" onclick="changecolor(this)">
+                    </li>
+
+                    <li>
+                        <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+                        <input id="name" type="text" name="name" value="" onclick="changecolor(this)">
+                    </li>
+
+                    <!--<li>-->
+                    <!--<span>生日：</span>-->
+                    <!--<input id="birthday" type="text" name="birthday" placeholder="例如：1988-01-01" value=""-->
+                    <!--onclick="changecolor(this)">-->
+                    <!--</li>-->
+
+                    <!--<li class="user_gender c1">-->
+                    <!--<span>性别：</span>-->
+                    <!--<p>-->
+                    <!--<input type="radio" name="gender" value="1">-->
+                    <!--<label for=""></label>-->
+                    <!--<i>男</i>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                    <!--<input type="radio" name="gender" value="0">-->
+                    <!--<label for=""></label>-->
+                    <!--<i>女</i>-->
+                    <!--</p>-->
+                    <!--</li>-->
+
+                    <li>
+                        <span>钱包地址：</span>
+                        <input id="wallet" type="text" name="wallet" placeholder="推荐使用mytoken地址" value=""
+                               onclick="changecolor(this)">
+                    </li>
+
+                    <li>
+                        <span>所在行业：</span>
+                        <input id="profession" type="text" name="profession" placeholder="例如：互联网金融" value=""
+                               onclick="changecolor(this)">
+                    </li>
+
+                    <li>
+                        <span>国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家：</span>
+                        <input id="country" type="text" name="country" value="" onclick="changecolor(this)">
+                    </li>
+
+                    <li>
+                        <span>居&nbsp;住&nbsp;地 ：</span>
+                        <input id="address" type="text" name="address" value="" onclick="changecolor(this)"
+                               oninput="saveCheck()">
+                    </li>
+
+                    <!--<li >-->
+                    <!--<span>个人简介：</span>-->
+                    <!--<textarea name="introduction" id="" cols="30" rows="10" value=""></textarea>-->
+                    <!--</li>-->
+                    <li>
+                        <button id="save" class="user_btn show">保存</button>
+                    </li>
+                    <!--<li id="save" class="user_btn show">保存</li>-->
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>
+<script type="text/javascript" src="../../public/js/layer.js"></script>
+<script>
+    var nameInput = document.getElementById('name');
+    var nicknameInput = document.getElementById('nickname');
+    var walletInput = document.getElementById('wallet');
+    var professionInput = document.getElementById('profession');
+    var countryInput = document.getElementById('country');
+    var addressInput = document.getElementById('address');
+    var headInput = document.getElementById('head');
+    var saveBtn = document.getElementById('save');
+    var inputArry = document.getElementsByTagName('input');
+
+    function changecolor(y) {
+        for (var i = 0; i < inputArry.length; i++) {
+            inputArry[i].style.outline = 0;
+            inputArry[i].style.borderColor = '#D8D8D8';
+        }
+        y.style.borderColor = '#FF9933';
+    }
+
+    function saveCheck() {
+
+        if ((name != null || name != "") && (wallet != null || wallet != "")) {
+            saveBtn.style.backgroundColor = '#FF9933';
+            saveBtn.style.borderColor = '#FF9933';
+        }
+    }
+
+    $(function () {
+        $("#uphead").click(function (event) {
+            event.preventDefault();
+            $("#head").click();
+        });
+        $("#head").change(function () {
+            $("#headImg").attr('src', URL.createObjectURL(headInput.files[0]));
+        });
+    });
+
+
+    saveBtn.onclick = function (ev) {
+        var coverImg = headInput.files[0];
+        var reader = new FileReader();
+        var name = nameInput.value;
+        var nickname = nicknameInput.value;
+        var wallet = walletInput.value;
+        var profession = professionInput.value;
+        var country = countryInput.value;
+        var address = addressInput.value;
+
+        var userExtend;
+
+        // if (coverImg == null || coverImg == "") {
+        //     layer.msg("请选择图片");
+        //     return;
+        // }
+        if (name == null || name == "") {
+            layer.msg("请输入姓名");
+            return;
+        }
+        if (wallet == null || wallet == "") {
+            layer.msg("请输入钱包地址");
+            return;
+        }
+
+        if (coverImg != null && coverImg != "") {
+
+
+            reader.readAsDataURL(coverImg);
+            reader.onload = function (ev1) {
+                userExtend = {
+                    info: reader.result,
+                    name: name,
+                    nickname: nickname,
+                    mytoken: wallet,
+                    trade: profession,
+                    country: country,
+                    address: address
+                };
+
+                $.ajax({
+                    url: "/user/extend/update",
+                    contentType: "application/json",
+                    type: "post",
+                    async: false,
+                    data: JSON.stringify(userExtend),
+                    success: function (is) {
+                        if (is) {
+                            layer.msg("保存成功");
+                        } else {
+                            layer.msg("服务器错误，保存失败");
+                        }
+                    }
+                })
+            }
+
+            // console.log(userExtend);
+            // layer.msg("请选择图片");
+            // return;
+        }else{
+
+            userExtend = {
+                name: name,
+                nickname: nickname,
+                mytoken: wallet,
+                trade: profession,
+                country: country,
+                address: address
+            };
+
+        }
+
+        console.log(userExtend);
+            $.ajax({
+                url: "/user/extend/update",
+                contentType: "application/json",
+                type: "post",
+                async: false,
+                data: JSON.stringify(userExtend),
+                success: function (is) {
+                    if (is) {
+                        layer.msg("保存成功");
+                    } else {
+                        layer.msg("服务器错误，保存失败");
+                    }
+                }
+            })
+    }
+
+    // $("#save").click(function () {
+    //
+    //
+    //     var coverImg = file.files[0];
+    //     var reader = new FileReader();
+    //     // var title = articleTitle.value;
+    //     // var brief = articleBrief.value;
+    //     // var content = tinymce.activeEditor.getContent();
+    //     // if (coverImg == null || coverImg == "") {
+    //     //     layer.msg("请选择图片");
+    //     //     return;
+    //     // }
+    //     // if (title == null || title == ""){
+    //     //     layer.msg("请设置标题");
+    //     //     return;
+    //     // }
+    //     // if (brief == null || brief == ""){
+    //     //     layer.msg("请写入摘要");
+    //     //     return;
+    //     // }
+    //     // if (content == null || content == ""){
+    //     //     layer.msg("文本内容不能为空");
+    //     //     return;
+    //     // }
+    //     reader.readAsDataURL(coverImg);
+    //     reader.onload = function (ev1) {
+    //         var article = {
+    //
+    //
+    //             "name":$("#name").val(),
+    //             "trade":$("#profession").val(),
+    //             "mytoken":$("#wallet").val(),
+    //             "country":$("#country").val(),
+    //             "address":$("#address").val(),
+    //             //
+    //             // atitle:title,
+    //             // brief:brief,
+    //             coverimg:reader.result
+    //             // acontent:content
+    //         };
+    //         console.log(article);
+    //         $.ajax({
+    //             url:"/article/uploadArticle",
+    //             contentType:"application/json",
+    //             type:"post",
+    //             async:false,
+    //             data:JSON.stringify(article),
+    //             success:function (is) {
+    //                 if (is){
+    //                     layer.msg("保存成功");
+    //                 } else {
+    //                     layer.msg("服务器错误，保存失败");
+    //                 }
+    //             }
+    //         })
+    //     }
+
+
+    //
+    $.ajax({
+        // data:{
+        //
+        //     "name":$("#name").val(),
+        //     "trade":$("#profession").val(),
+        //    "mytoken":$("#wallet").val(),
+        //     "country":$("#country").val(),
+        //     "address":$("#address").val()
+        //
+        // },
+        url: "/user/extend/userextend",
+        dataType: "json",
+        type: "GET",
+        success: function (result) {
+
+            console.log(result)
+            if (result.code === 0) {
+
+                user = result.data.list[0];
+
+                console.log(user)
+                // layer.msg("修改成功！")
+                $("#name").val(user.name);
+                $("#wallet").val(user.mytoken);
+                $("#profession").val(user.trade);
+                $("#country").val(user.country);
+                $("#address").val(user.address);
+                $("#nickname").val(user.nickname)
+                $("#headImg").attr("src", user.info);
+            } else {
+                // layer.msg("修改失败！")
+            }
+        }
+    })
+
+
+</script>

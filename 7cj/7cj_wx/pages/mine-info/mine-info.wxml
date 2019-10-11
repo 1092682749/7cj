@@ -1,0 +1,41 @@
+<!--pages/mine-info/mine-info.wxml-->
+<view class='login-body'>
+  <view>
+    <!-- <text class='login-title'>个人资料</text> -->
+    <view class='info-head'>
+      <image bindtap='selectImg' mode='aspectFill' src='{{headimg ? headimg : "/utils/imgs/user.gif"}}'></image>
+      <text>
+        温馨提示：
+        1、上传图片大小不超过2MB；
+        2、如果要展示完整头像，可上传宽高尺寸为1：1的图片；
+      </text>
+    </view>
+    <view class='info-text'>
+      <view>
+        <text decode>昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</text>
+        <input maxlength='8' value='{{nickname}}' bindinput='nicknameInput' placeholder='请输入昵称'></input>
+      </view>
+      <view>
+        <text decode>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</text>
+        <input maxlength='6' value='{{name}}' bindinput='nameInput' placeholder='请输入姓名'></input>
+      </view>
+      <view>
+        <text>钱包地址</text>
+        <input bindinput='walletInput' value='{{wallet}}' placeholder='请输入钱包地址'></input>
+      </view>
+      <view>
+        <text>所在行业</text>
+        <input maxlength='20' bindinput='workInput' value='{{work}}' placeholder='请输入所在行业'></input>
+      </view>
+      <view>
+        <text decode>国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家</text>
+        <input maxlength='10' bindinput='countyInput' value='{{county}}' placeholder='请输入所在国家'></input>
+      </view>
+      <view>
+        <text decode>居&nbsp;住&nbsp;地</text>
+        <input maxlength='35' bindinput='addressInput' value='{{address}}' placeholder='请输入居住地'></input>
+      </view>
+    </view>
+    <view bindtap='confirm' class='login-login'>保存</view>
+  </view>
+</view>

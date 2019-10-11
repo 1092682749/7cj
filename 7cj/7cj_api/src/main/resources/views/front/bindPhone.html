@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/personalCenter.css">
+    <style>
+        .modify-box{
+            width: 900px;
+        }
+        .alter-info{
+            margin-top: 100px;
+            position: relative;
+            margin-left: 25%;
+            width: 50%;
+            height: 450px;
+            /*margin: auto;*/
+            background-color: #FFFFFF;
+            text-align: center;
+            /*border:solid 0.5px 	#D8D8D8 ;*/
+        }
+        .alter-info *{
+            display: inline-block;
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+        }
+        .inputbox{
+            text-align:left;
+            padding-left: 5%;
+            border:solid 0.5px #D8D8D8;
+        }
+
+        .buttonbox{
+            width: 75%;
+            height: 40px;
+            text-align: center;
+            border: 0;
+            color: #F0F0F0;
+            background-color: 	#B8B8B8;
+            outline: none;
+        }
+        #inVerify{
+            width: 65%;
+            text-align: left;
+            height: 36px;
+            margin-top: 3px;
+            border: 0;
+            padding: 0;
+        }
+        .verifybox{
+            width: 30%;
+            float: right;
+            height: 33px;
+            margin-top: 5px;
+            margin-right: 1px;
+            padding: 0;
+            border-top: 0;
+            border-bottom: 0;
+            border-right: 0;
+            border-left: solid 1px #D8D8D8;
+            background-color: #FFFFFF;
+            color: #FF9933;
+        }
+        /*#phone{*/
+            /*pointer-events: none;*/
+        /*}*/
+        .p_rt h2{
+            font-size: 20px;
+            font-weight: 500;
+            color: #383838;
+            padding-top: 19px;
+            margin: 0 60px 70px;
+            line-height: 40px;
+            border-bottom: solid 1px #E1E0E1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main">
+    <div class="content">
+
+
+<div class="p_lf">
+    <ul >
+        <li class="user_data">
+            <a class="p_lf_a" href="personalCenter"><i></i>个人资料</a>
+        </li>
+        <li class="user_article "><a class="p_lf_a" href="personalArticle"><i></i>我的文章</a></li>
+        <!--<li class="user_info"><a class="p_lf_a" href="message"><i></i>消息中心</a></li>-->
+        <!--<li><a class="p_lf_a" href=""><i></i>绑定邮箱</a></li>-->
+        <!--<li class="user_phone"><a class="p_lf_a  a_show" href=""><i></i>绑定手机</a></li>-->
+        <li class="user_reset"><a class="p_lf_a" href="alterPass"><i></i>修改密码</a></li>
+    </ul>
+</div>
+        <div class="p_rt">
+            <h2>绑定手机</h2>
+<div class="modify-box">
+
+    <div class="alter-info"  style = height:600px>
+        <input id="phone" class="inputbox" type="tel" placeholder="手机号码"  onclick="changecolor(this)">
+
+        <div class="inputbox" onclick="changecolor(this)">
+            <input id="inVerify" type="text"  placeholder="输入验证码">
+            <input class="verifybox" type="button"  value="获取验证码" onclick="settime(this)">
+        </div>
+
+        <button id="button" class="buttonbox"  data-type="register">提交</button>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>
+<script type="text/javascript" src="../../public/js/layer.js"></script>
+<script>
+    var inputArry = document.getElementsByClassName('inputbox');
+    var inVerify = document.getElementById('inVerify');
+    var button = document.getElementById("button");
+
+    function changecolor(y) {
+        for(var i = 0;i<inputArry.length;i++){
+            inputArry[i].style.outline = 0 ;
+            inputArry[i].style.borderColor = '#D8D8D8';
+            inVerify.style.outline = 0;
+        }
+        y.style.borderColor = '#FF9933';
+    }
+
+    var countDown = 60;
+    function settime(time){
+
+        if(countDown  == 0){
+            time.removeAttribute("disabled");
+            time.value = "获取验证码";
+            countDown = 60;
+            return false;
+        }else{
+            time.setAttribute("disabled",true);
+            time.value = "已发送"+ countDown +"s";
+            countDown--;
+        }
+        setTimeout(function () {
+            settime(time);
+        },1000);
+    }
+
+    var userId;
+    var userPhone;
+
+    $(function () {
+        $.ajax({
+
+                type : "GET",
+                url : "/getUserIdPhoneForAlter",
+                success: function (result) {
+                    userId = result.userID;
+                    userPhone =result.userPhone;
+                    $("#phone").val(userPhone);
+                }
+
+            }
+
+        )
+        $("#inVerify").click().attr("border-color","#FF9933");
+
+        $("#button").click(function () {
+            $.ajax({
+                type : "POST",
+                data : {
+                    "id" : userId,
+                    "phone" : $("#phone").val(),
+                    "vcode": $("#inVerify").val()
+                },
+                dataType : "json",
+                url : "/ajaxbindPhone",
+                success : function(result) {
+                    console.log(result);
+                    if (result.status != 200) {
+                        layer.msg(result.message)
+                        // alert("账户或密码错误")
+                        // swal("哦豁",result.message,"error");
+                    } else {
+                        location.href = "/index";
+                    }
+                }
+            });
+        })
+    })
+</script>

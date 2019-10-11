@@ -1,0 +1,86 @@
+/* pages/mine-pwd/mine-pwd.wxss */
+page{
+  background-color: white;
+}
+.login-body{
+  width: calc(100% - 60rpx);
+  margin-left: 30rpx;
+  background-color: white;
+}
+.login-body>view:nth-child(1){
+  padding: 60rpx 30rpx ;
+}
+.login-title{
+  margin-top: 20rpx;
+  display: block;
+  text-align: center;
+  margin-bottom: 80rpx;
+}
+.login-input input{
+  width: calc(100% - 20rpx);
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  border: 1px solid #DBDBDB; 
+  padding: 10rpx;
+}
+.login-input view{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  width: 100%;
+  border: 2rpx solid #DBDBDB;  
+}
+.login-input view input{
+  margin-top: 0;
+  width: 64%;
+  border: none;
+}
+.login-input view text{
+  padding: 10rpx 0;
+  text-align: center;
+  border-left: 2rpx solid #DBDBDB;
+  height: 100%;
+  display: inline-block;
+  width: 36%;
+}
+.login-login{
+  width: 100%;
+  height: 80rpx;
+  background-color: rgb(253,156,45);
+  color: white;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.login-unlogin{
+  width: 100%;
+  height: 80rpx;
+  background-color: rgba(0,0,0,.25);
+  color: white;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.login-forget{
+  color: rgb(253,156,45);
+  font-size: 25rpx;
+  margin: 40rpx 0;
+}
+.login-register{
+  width: 100%;
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx 0;
+  border-top: 2rpx solid #E5E5E5;
+  background-color: #FBFBFB;
+  font-weight: 300;
+}
+.login-register text{
+  color: rgb(253,156,45);
+  font-weight: normal;
+}

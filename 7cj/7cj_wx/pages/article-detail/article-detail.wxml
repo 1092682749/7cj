@@ -1,0 +1,21 @@
+<!--pages/article-detail/article-detail.wxml-->
+<view class='detail-head'>
+  <text  class='detail-head-title'>{{detailData.atitle}}</text>
+  <view class='detail-head-user'>
+    <!-- <image mode='aspectFill' src='{{imgUrl + userData.header}}'></image> -->
+    <view class='detail-head-text'>
+      <view class='detail-head-first'>
+        <text>来源: {{detailData.source}}</text>
+        <text>{{detailData.readnumber}}</text>      
+      </view>
+      <view class='detail-head-second'>
+        <text>{{detailData.addtime}}</text>
+        <text>浏览量</text>      
+      </view>
+    </view>
+  </view>
+</view>
+<view class='detail-content'>
+   <rich-text nodes="{{detailData.acontent}}"></rich-text>   
+</view>
+<view style='height: 100rpx;'></view>

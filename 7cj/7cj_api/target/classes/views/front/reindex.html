@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+
+    <style>
+
+        .author-box{
+            position: absolute;
+            right: 9rem;
+            top: 1rem;
+            z-index: 3;
+            list-style: none;
+        }
+
+        .author{
+            background-color: white;
+            -moz-box-shadow:-1px 2px 18px #203033; -webkit-box-shadow:-1px 2px 18px #203033; box-shadow:-1px 2px 18px #203033;
+
+        }
+        #ishover{
+            display: flex;
+            justify-content: center;
+            /*border-bottom: white solid 1rem;*/
+        }
+        #ishover img{
+            margin-bottom: 5px;
+        }
+        .author li{
+            list-style: none;
+            width: 7rem;
+            height: 3.2rem;
+            line-height: 3.2rem;
+            text-align: center;
+            color: #250412;
+
+        }
+        .author li:hover{
+            background-color: #E5E5E5;
+            color: #FF9D11;
+        }
+
+        .writebox{
+            position: relative;
+            float: right;
+            margin-right: 4rem;
+        }
+        .writebox li{
+            /*line-height: 4rem;*/
+            display: inline-block;
+
+        }
+        .writebox li img{
+            position: relative;
+            top: 0.5rem;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="../../public/css/banner.css">
+    <link rel="stylesheet" href="../../public/css/banner_small.css">
+
+</head>
+<body>
+<!--顶部导航栏-->
+    <div class="topNavigation">
+        <img class="logo" src="../../public/imgs/logo.jpg">
+
+        <ul class="loginAndRegister">
+
+            <!--<div>-->
+
+                <!--<a href="http://www.baidu.com">-->
+                    <!--<li  class="userLi">-->
+                        <!--<img class="user" src="../../public/imgs/user.png">-->
+                    <!--</li>-->
+                <!--</a>-->
+
+
+                <!--&lt;!&ndash;登陆连接&ndash;&gt;-->
+                <!--<a href="/login" class="transitionA"><li>登陆</li></a>-->
+
+                <!--<li>|</li>-->
+
+                <!--&lt;!&ndash;注册链接&ndash;&gt;-->
+                <!--<a href="/regis" class="transitionA"><li>注册</li></a>-->
+
+
+            <!--</div>-->
+
+
+            <!--&lt;!&ndash;<li class="writeLi">写文章</li>&ndash;&gt;-->
+        <!--</ul>-->
+
+        <ul class="writebox">
+            <li class="writeLi">写文章</li>
+        </ul>
+
+        <ul class="author-box">
+            <li id="ishover"><img src="../../public/images/coinbi.png"></li>
+            <li>
+                <ul class="author" >
+
+                    <li class="li1" href="www.baidu.com">个人中心</li>
+                    <li class="li2">我的文章</li>
+                    <li class="li3">消息中心</li>
+                    <li class="li4">退出</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--内容-->
+<div class="content">
+    <div class="contentLeft">
+        <!--轮播-->
+        <div id="swiperOutBox">
+            <div class="swiper-container" id="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-color: rebeccapurple">
+                        <img src="http://img.dwstatic.com/wuxia/1806/393166820519/1529212298765.png">
+                    </div>
+                    <div class="swiper-slide" style="background-color: blue">
+                        <img src="http://img.dwstatic.com/wuxia/1805/390442042396/1526486983052.png">
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+
+                <!-- 如果需要导航按钮 -->
+                <!--<div class="swiper-button-prev hiddenButton"></div>-->
+                <!--<div class="swiper-button-next hiddenButton"></div>-->
+            </div>
+        </div>
+        <div class="blurBox">
+            <h2 id="blurTitle" style="z-index: 2">asdasdadad</h2>
+            <p id="blurContent" style="z-index: 2">asdasdasdasdadadadadadadasdasdasdasdasdasdasdadadadasdsasdasda</p>
+            <span style="z-index: 2" class="timeSpan">2018-1-1</span>
+            <span style="z-index: 2" class="viewSpan">浏览量124563</span>
+            <div class="blurBoxAfter"></div>
+        </div>
+        <div id="allNews" style="background-color: whitesmoke">
+            <!--导航条-->
+            <ul class="slideUl" style="margin-bottom: 0.3rem">
+                <li>最新</li>
+                <li>热点新闻</li>
+                <!--<li>项目报告</li>-->
+                <!--<li>精英视点</li>-->
+                <!--<li>行业会展</li>-->
+                <!--<li>行业政策</li>-->
+                <!--<li>项目专访</li>-->
+            </ul>
+
+            <!--新闻内容-->
+            <div class="contentBox">
+                    <span>
+                        <img class="newsPic" src="https://www.xcj.com/uploads/20180718/617651171b502c82dee64f8122d5a436.jpg">
+                    </span>
+                <span class="contentBrief">
+                        <a><h2>这是一个标题</h2></a>
+                        <p>这是文本内容</p>
+                        <span class="smallSpan">
+                            <span class="contentUserSpan">
+                                <img class="contentHeadPic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2859410315,1608202772&fm=27&gp=0.jpg">
+                                <p>name</p>
+                            </span>
+                            <span>time</span>
+                            <span>浏览量</span>
+                            <span></span>
+                        </span>
+                    </span>
+            </div>
+            <div class="loadBox" onclick="addNews()">加载更多</div>
+            <div style="background-color: whitesmoke;width: 100%;height: 0.5rem"></div>
+        </div>
+    </div>
+    <div class="contentRight">
+        <div class="hotArticles">
+            <div class="hotTitle">热门标题</div>
+            <ul class="hotUl">
+                <li>
+                    <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                    <span><a href="http://www.baicu.com">asdadadasds</a></span>
+                </li>
+                <li>
+                    <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                    <span><a href="http://www.baicu.com">asdadadasds</a></span>
+                </li>
+                <li>
+                    <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                    <span><a href="http://www.baicu.com">asdadadasds</a></span>
+                </li>
+                <li>
+                    <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                    <span><a href="http://www.baicu.com">asdadadasds</a></span>
+                </li>
+                <li>
+                    <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                    <span><a href="http://www.baicu.com">asdadadasds</a></span>
+                </li>
+                <!--<li>-->
+                <!--<img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">-->
+                <!--<span>asdadadasds</span>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--<div class="foot">-->
+    <!--<div class="aboutOurBox">-->
+        <!--<ul>-->
+            <!--<li>关于我们</li>-->
+            <!--<li>服务条款</li>-->
+            <!--<li>联系我们</li>-->
+            <!--<li>意见反馈</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+
+</body>
+</html>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
+<script type="text/javascript" src="../../public/js/layer.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>
+<script src="../../public/js/index.js"></script>
+
+<script>
+
+
+    $(document).ready(function(){
+
+        // $.ajax({
+        //
+        //
+        //     type : "GET",
+        //     url : "/islogin",
+        //     success : function(result) {
+        //         console.log(result);
+        //         if (result.islogin === "login") {
+        //
+        //             $(".loginAndRegister").hide
+        //             $("#ishover").show
+        //
+        //             layer.alert("已经登录过")
+        //
+        //         } else {
+        //             layer.alert("您未登录")
+        //             // location.href = "/index";
+        //         }
+        //     }
+        //
+        // })
+
+        $(".li1").click(function () {
+            location.href = "editor.html"
+        })
+
+        // $(".author-box").hover(function(){
+        //     $(".author").show(500);
+        // },function(){$(".author").hide(500)});
+    });
+
+</script>

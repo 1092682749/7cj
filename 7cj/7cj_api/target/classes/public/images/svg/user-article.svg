@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>我的文章-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="专栏-我的文章" transform="translate(-416.000000, -171.000000)" stroke="#333333">
+            <g id="我的文章-1" transform="translate(416.000000, 171.000000)">
+                <path d="M15.104287,5.5 C15.6366899,5.5 16.4352942,5.5 17.5001,5.5 C18.0521,5.5 18.5001,5.83010526 18.5001,6.23684211 L18.5001,17.5 C18.5001,18.6045695 17.6046695,19.5 16.5001,19.5 L15.0026517,19.5" id="Stroke-1"></path>
+                <path d="M14.6667667,19.5 L1.33343333,19.5 C0.873433333,19.5 0.5001,19.052 0.5001,18.5 L0.5001,1.5 C0.5001,0.948 0.873433333,0.5 1.33343333,0.5 L14.6667667,0.5 C15.1267667,0.5 15.5001,0.948 15.5001,1.5 L15.5001,19.5 L14.6667667,19.5 Z" id="Stroke-1"></path>
+                <path d="M5,5 L12,5" id="Stroke-3"></path>
+                <path d="M4,9 L12,9" id="Stroke-3-Copy"></path>
+                <path d="M6,13 L12,13" id="Stroke-3-Copy-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

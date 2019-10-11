@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F0F0F0;
+}
+.main{
+    top: 80px;
+    /*position: absolute;*/
+    width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.main div.regis_page{
+    height: 550px;
+}
+.page{
+    position: relative;
+    width: 30%;
+    height: 450px;
+    margin: auto;
+    background-color: #FFFFFF;
+    text-align: center;
+    border:solid 0.5px 	#D8D8D8 ;
+}
+.page *{
+    display: inline-block;
+    /*width: 70%;*/
+    height: 40px;
+    margin-top: 20px;
+}
+
+.p-register{
+    display: block;
+    text-align: center;
+    line-height: 80px;
+    height: 80px;
+    font-size: 20px;
+}
+.inputbox{
+    text-align:left;
+    width: 70%;
+    padding-left: 5%;
+    border:solid 0.5px #D8D8D8;
+}
+
+.buttonbox{
+    width: 75%;
+    height: 40px;
+    text-align: center;
+    border: 0;
+    color: #F0F0F0;
+    background-color: 	#B8B8B8;
+    outline: none;
+}
+.show{
+    background-color: #FF9933;
+}
+.buttonbox:hover{
+    cursor: pointer;
+}
+
+.servicebox{
+    width: 75%;
+    height: 40px;
+    text-align: left;
+    font-size: 10px;
+}
+
+.checkbox{
+    width: 10px;
+    height: 10px;
+    margin-top: 0;
+}
+
+#a_forgotps{
+    width: 75%;
+    height: 40px;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align:left;
+    color: #FF9933;
+}
+
+#span_regis{
+    width: 80%;
+}
+
+#a_service{
+    text-decoration: none;
+    color: #FF9933;
+    margin-top: 0;
+    width: 80px;
+}
+
+.span_foot{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    color:#505050	;
+    border-top:solid 0.5px 	#D8D8D8;
+}
+.a_regis{
+    text-decoration: none;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    color: #FF9933 ;
+}
+#inVerify{
+    width: 65%;
+    text-align: left;
+    height: 36px;
+    margin-top: 3px;
+    border: 0;
+    padding: 0;
+}
+.verifybox{
+    width: 30%;
+    float: right;
+    height: 33px;
+    margin-top: 5px;
+    margin-right: 1px;
+    padding: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-left: solid 1px #D8D8D8;
+    background-color: #FFFFFF;
+    color: #FF9933;
+    outline: 0;
+}
+.verifybox:hover{
+    cursor: pointer;
+}
+
+
+

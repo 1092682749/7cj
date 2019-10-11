@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="19px" viewBox="0 0 22 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>个人资料-个人中心</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="个人资料-个人中心" transform="translate(0.000000, 1.000000)" stroke="#333333">
+            <path d="M19.5001,16.9999 L1.5001,16.9999 C0.9481,16.9999 0.5001,16.5519 0.5001,15.9999 L0.5001,1.4999 C0.5001,0.9479 0.9481,0.4999 1.5001,0.4999 L19.5001,0.4999 C20.0521,0.4999 20.5001,0.9479 20.5001,1.4999 L20.5001,15.9999 C20.5001,16.5519 20.0521,16.9999 19.5001,16.9999 Z" id="Stroke-1"></path>
+            <path d="M10.3238,6.4999 C10.3238,8.0039 9.1038,9.2239 7.5998,9.2239 C6.0958,9.2239 4.8758,8.0039 4.8758,6.4999 C4.8758,4.9959 6.0958,3.7759 7.5998,3.7759 C9.1038,3.7759 10.3238,4.9959 10.3238,6.4999 Z" id="Stroke-3"></path>
+            <path d="M3.1002,13.7236 C3.1002,11.2386 5.1152,9.2236 7.6002,9.2236 C10.0852,9.2236 12.1002,11.2386 12.1002,13.7236" id="Stroke-5" stroke-linecap="round"></path>
+            <path d="M13.1002,5.2001 L18.1002,5.2001" id="Stroke-7" stroke-linecap="round"></path>
+            <path d="M13.1002,8.6 L18.1002,8.6" id="Stroke-9" stroke-linecap="round"></path>
+            <path d="M14.1002,11.9999 L18.1002,11.9999" id="Stroke-11" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qy.admin.dao.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.qy.model.SysUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+    <result column="last_login_time" jdbcType="TIMESTAMP" property="last_login_time" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="create_name_id" jdbcType="VARCHAR" property="create_name_id" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="last_update_time" />
+    <result column="last_update_name_id" jdbcType="VARCHAR" property="last_update_name_id" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phone_number" />
+    <result column="header" jdbcType="VARCHAR" property="header" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+  </resultMap>
+
+  <select id="selectByMap" resultType="com.qy.model.SysUser">
+    SELECT * FROM sys_user WHERE phone_number=#{phone_number} AND password=#{password}
+  </select>
+
+  <select id="findUserById" parameterType="string" resultType="com.qy.model.SysUser">
+    select *from sys_user where id = #{id}
+  </select>
+
+  <select id="findUserByUser" parameterType="string" resultType="com.qy.model.SysUser">
+    select *from sys_user where username = #{username}
+  </select>
+
+  <select id="findUserByPhone" parameterType="string" resultType="com.qy.model.SysUser">
+    select *from sys_user where phone_number = #{phone_number}
+  </select>
+
+  <delete id="deleteUserByUid" parameterType="string">
+    delete from sys_user where id = #{id}
+  </delete>
+
+  <select id="findAdminFountId" parameterType="string" resultType="com.qy.model.SysUser">
+    select * from sys_user where phone_number = #{aid}
+  </select>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qy.dao.QyUpordownMapper">
+  <resultMap id="BaseResultMap" type="com.qy.model.QyUpordown">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="udid" jdbcType="INTEGER" property="udid" />
+    <result column="up" jdbcType="INTEGER" property="up" />
+    <result column="down" jdbcType="INTEGER" property="down" />
+    <result column="aid" jdbcType="INTEGER" property="aid" />
+  </resultMap>
+</mapper>

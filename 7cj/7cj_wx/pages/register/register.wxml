@@ -1,0 +1,17 @@
+<!--pages/register/register.wxml-->
+<view class='login-body'>
+  <view>
+    <text class='login-title'>会员注册</text>
+    <view class='login-input'>
+      <input placeholder='请输入手机号' value='{{account}}' maxlength='11' bindinput='accountInput'></input>
+      <view>
+        <input placeholder='请输入验证码' value='{{code}}' type='number' bindinput='codeInput'></input>
+        <text bindtap='getCode'>{{codeText}}</text>
+      </view>
+      <input placeholder='创建密码' value='{{password}}' type="password" bindinput='pwdInput'></input>  
+      <input placeholder='确认密码' value='{{passwordBack}}' type="password" bindinput='pwdInputBack'></input>            
+    </view>
+    <view bindtap='register' class='{{account && code && password && passwordBack ? "login-login":"login-unlogin"}}'>注册</view>
+  </view>
+  <view class='login-register'>已经有7财经账号？<text bindtap='goToLogin'>立即登录</text></view>
+</view>

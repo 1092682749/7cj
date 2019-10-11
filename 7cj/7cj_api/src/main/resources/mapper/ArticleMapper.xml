@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qy.front.dao.ArticleMapper">
+  <resultMap id="BaseResultMap" type="com.qy.model.Article">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="aid" jdbcType="INTEGER" property="aid" />
+    <result column="atitle" jdbcType="VARCHAR" property="atitle" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="addtime" jdbcType="VARCHAR" property="addtime" />
+    <result column="readnumber" jdbcType="INTEGER" property="readnumber" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="isbanner" jdbcType="INTEGER" property="isbanner" />
+    <result column="category" jdbcType="INTEGER" property="category" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyword" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="acontent" jdbcType="LONGVARCHAR" property="acontent" />
+    <result column="coverimg" jdbcType="LONGVARCHAR" property="coverimg" />
+    <result column="brief" jdbcType="LONGVARCHAR" property="brief" />
+  </resultMap>
+  <select id="findAllArticleByDESC" parameterType="int" resultType="map">
+    select aid,category,isbanner,state,atitle , brief,coverimg,addtime,username,readnumber,header,source,author from article a left join sys_user s on a.uid = s.id
+     where a.state = 1 and a.category != 7 order by a.addtime desc limit #{pageStart},5
+  </select>
+  <select id="findArticleByHot" parameterType="int" resultType="java.util.HashMap">
+    select * from article a left join sys_user s on a.uid = s.id
+    where state = 1 and category != 7 order by readnumber desc limit #{pageStart},5
+  </select>
+  <select id="findArticleByUserId" resultType="com.qy.model.Article">
+    select aid from article where uid = #{id} and state = 1 order by addtime desc
+  </select>
+  <select id="getAllViewCount" parameterType="string" resultType="int">
+    SELECT SUM(readnumber) FROM article WHERE uid = #{id}
+  </select>
+  <select id="findUserArticleDESC" resultType="map">
+    select aid,category,isbanner,state,atitle , brief,coverimg,addtime,username,readnumber,header,source,author from article a left join sys_user s on a.uid = s.id
+    where uid = #{arg0} and state = 1 and category != 7 order by addtime desc limit #{arg1},5
+  </select>
+  <select id="findUserArticleCount" parameterType="string" resultType="int">
+    select count(*) from article where uid = #{id} and state = 1
+  </select>
+  <insert id="saveArticle" parameterType="com.qy.model.Article">
+    insert into article
+    (atitle, acontent, uid, coverimg, brief, addtime, readnumber,state,author)
+     values (#{atitle},#{acontent},#{uid},#{coverimg},#{brief},#{addtime},#{readnumber},#{state})
+  </insert>
+  <select id="findMyArticleDESC" resultType="com.qy.model.Article">
+    select * from article where uid = #{arg0} and category != 7 order by addtime desc limit #{arg1},5
+  </select>
+  <select id="findAllBannerCount" resultType="int">
+    select count(*) from article where isbanner = 1
+  </select>
+  <select id="findArticleAndUser" resultType="map">
+    select * from article a left join sys_user s on a.uid = s.id
+  </select>
+  <!--&amp;amp;amp;lt;select id="cancelBanner"-->
+  <select id="findMyCheckingArticle" resultType="com.qy.model.Article">
+    select *from article where uid = #{arg0} and state = 2 order by addtime desc limit #{arg1},5
+  </select>
+  <select id="findMyReleaseArticle" resultType="com.qy.model.Article">
+    select *from article where uid = #{arg0} and state = 1 order by addtime desc limit #{arg1},5
+  </select>
+  <select id="findMyNotPassArticle" resultType="com.qy.model.Article">
+    select *from article where uid = #{arg0} and state = 3 order by addtime desc limit #{arg1},5
+  </select>
+  <select id="findAllDESC" resultType="com.qy.model.Article">
+
+  </select>
+  <select id="findAllBanner" resultType="com.qy.model.Article">
+    select *from article where isbanner = 1;
+  </select>
+  <select id="findUserAllStateArticle" parameterType="string" resultType="com.qy.model.Article">
+    select *from article where uid = #{id}
+  </select>
+  <select id="findArticleByState" parameterType="int" resultType="com.qy.model.Article">
+    select *from article
+    <where>
+      <if test="state !=null">
+        state = #{state}
+      </if>
+  </where>
+    ORDER  BY addtime DESC
+  </select>
+<select id="findArticleByCategory" resultType="map">
+  select aid,category,isbanner,state,atitle , brief,coverimg,addtime,username,readnumber,header,source from (select *from article a left join sys_user s on a.uid = s.id
+  where a.category = #{arg0} and a.state = 1) n
+  <if test="arg0 == 7">
+    left join qy_upordown u on n.aid = u.aid
+  </if>
+    order by n.aid desc
+  limit #{arg1},5
+</select>
+  <select id="findFlashById" parameterType="int" resultType="map">
+     SELECT * FROM (select * from article a where a.aid = #{id})l left join qy_upordown u on
+    l.aid = u.aid
+  </select>
+  <select id="findIdByAllInfo" parameterType="com.qy.model.Article" resultType="int">
+    select aid from article where atitle = #{atitle} and brief = #{brief} and addtime = #{addtime}
+    and state = #{state} and category = #{category}
+  </select>
+  <select id="getAllArticleById" parameterType="int" resultType="com.qy.model.Article">
+    SELECT * FROM article WHERE aid in
+    ((SELECT aid FROM article WHERE aid &lt; #{id} AND category != 7 ORDER BY aid DESC LIMIT 1),
+    #{id},
+    (SELECT aid FROM article WHERE aid &gt; #{id} AND category != 7 ORDER BY aid LIMIT 1))
+  </select>
+  <select id="findJs" parameterType="int" resultType="map">
+    select * from (select *from article a left join sys_user s on a.uid = s.id
+    where a.category = 7 and a.state = 1) n
+    left join qy_upordown u on n.aid = u.aid  order by n.addtime desc
+    limit #{page},5
+  </select>
+  <select id="findByTitle" parameterType="string" resultType="com.qy.model.Article">
+    select * from article where atitle = #{title}
+  </select>
+</mapper>

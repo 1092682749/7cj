@@ -1,0 +1,15 @@
+/*.articleContent{*/
+    /*width: 100%;*/
+/*}*/
+.matter{
+    margin-left: 0;
+    width: 60%;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+.Right{
+    display: none;
+}
+#articleTitle{
+    line-height: 30px;
+}

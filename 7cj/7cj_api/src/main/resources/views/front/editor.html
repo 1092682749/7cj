@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/personalCenter.css">
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/editor.css">
+    <link rel="stylesheet" href="../../public/css/editor_small.css" media="screen and (max-width:650px)">
+
+    <meta name="keywords" content="opensource rich wysiwyg text editor jquery bootstrap execCommand html5" />
+    <meta name="description" content="This tiny jQuery Bootstrap WYSIWYG plugin turns any DIV into a HTML5 rich text editor" />
+    <link rel="apple-touch-icon" href="//mindmup.s3.amazonaws.com/lib/img/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="http://mindmup.s3.amazonaws.com/lib/img/favicon.ico" >
+    <link href="../../public/css/RichEditor/prettify.css" rel="stylesheet">
+    <link href="../../public/css/RichEditor/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../../public/css/RichEditor/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/3.0.2/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../public/css/RichEditor/index.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../public/css/banner.css">
+    <link rel="stylesheet" href="../../public/css/banner_small.css">
+
+    <title>写文章</title>
+</head>
+<style>
+
+</style>
+
+<body style="padding: 0;">
+
+<!--文本编辑器-->
+<div id="editorTop" class="editorBox" >
+
+    <div class="editorColum">
+        <span class="articleTitle">*文章标题：</span>
+        <input id="articleTitle" class="labelInput" type="text" maxlength="15" oninput="limitNumber()">
+    </div>
+
+    <div class="editorColum">
+        <span class="articleTitle">*封&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面：</span>
+        <!--<label for="file">-->
+        <button class="buttonBox" id="upfile">上传图片</button>
+        <!--</label>-->
+        <img class="imgView" src="">
+        <div class="tipBox">请上传不大于2MB的图片</div>
+        <input id="file" accept="image/*" onchange="updateImg(this)" class="fileBox" style="display: none" type="file">
+    </div>
+
+    <div class="editorColum">
+        <span class="articleTitle">*文章类型：</span>
+
+        <div  id="typeSelect" class="typeSelect">
+            <li id="articleType" class="articleType" value="7" >快讯<div class="transition"></div></li>
+
+            <ul class="typeContent">
+                <!--<li value="7">快讯</li>-->
+                <li value="2">政策</li>
+                <li value="3">会议</li>
+                <li value="4">社区</li>
+                <li value="5">项目</li>
+                <li value="6">人物</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="editorColum article">
+        <span class="articleTitle">*文章摘要：</span>
+        <textarea class="articleInput" name="" id="articleBrief" cols="30" rows="10"></textarea>
+    </div>
+
+    <div  id="parentNode" class="editorColum">
+        <span class="articleTitle">*关键词：</span>
+        <input class="keywordInput" id="keywordInput" type="text" maxlength="10" oninput="limitkeyword()">
+        <!--<button class="addInput">添加</button>-->
+    </div>
+
+    <div   class="editorColum">
+        <span class="articleTitle">*来源：</span>
+        <input class="keywordInput" id="articleSource" type="text" maxlength="10" oninput="limitsource()">
+        <!--<button class="addInput">添加</button>-->
+    </div>
+
+    <div   class="editorColum">
+        <span class="articleTitle">*作者：</span>
+        <input class="keywordInput" id="articleAuthor" type="text" maxlength="10" oninput="limitauthor()">
+        <!--<button class="addInput">添加</button>-->
+    </div>
+
+
+    <div class="qrCodeBox">
+        <div class="qrCodeTitle">*打币二维码：</div>
+        <div class="qrCodeImg"><img src="../../public/images/二维码.jpg" alt="" ></div>
+    </div>
+
+</div>
+
+    <div class="editorBox" style="border: solid 1px #C8C8C8;">
+    <div class="hero-unit" style="padding: 0;margin-bottom: 0;border-radius: 0">
+        <div id="alerts"></div>
+        <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor" style="margin-top: 0">
+            <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                    <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+                    <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+                <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+                <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="icon-strikethrough"></i></a>
+                <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+            </div>
+            <div class="btn-group">
+                <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="icon-list-ul"></i></a>
+                <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="icon-list-ol"></i></a>
+                <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+                <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+            </div>
+            <div class="btn-group">
+                <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+                <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+                <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+                <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+            </div>
+            <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="icon-link"></i></a>
+                <div class="dropdown-menu input-append">
+                    <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+                    <button class="btn" type="button">Add</button>
+                </div>
+                <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="icon-cut"></i></a>
+            </div>
+
+            <div class="btn-group">
+                <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>
+                <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+            </div>
+            <div class="btn-group">
+                <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+                <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+            </div>
+            <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+        </div>
+        <div id="editor">
+
+        </div>
+    </div>
+    </div>
+
+<div id="editorFoot" class="editorBox ">
+
+    <!--<div class="editorColum">-->
+    <!--<span class="spanFront">*TAG标签：</span>-->
+    <!--<input class="labelInput" type="text">-->
+    <!--<input class="labelInput" type="text">-->
+    <!--<input class="labelInput" type="text">-->
+    <!--<input class="labelInput" type="text">-->
+    <!--<span class="tipBox">至少2个Tag标签</span>-->
+    <!--</div>-->
+
+    <!--<div  id="parentNode" class="editorColum">-->
+    <!--<span class="spanFront">*关键词：</span>-->
+    <!--<input class="labelInput" type="text">-->
+    <!--<button class="addInput" onclick="addInput()">添加</button>-->
+    <!--</div>-->
+
+    <div class="editorColum commitBox">
+        <button id="commit" class="commit" >保存并提交
+        </button>
+    </div>
+
+</div>
+
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>
+<!--<script src="https://cdn.bootcss.com/tinymce/4.7.12/tinymce.min.js"></script>-->
+<script type="text/javascript" src="../../public/js/layer.js"></script>
+<script src="../../public/js/editor.js"></script>
+<script>
+
+
+
+    //点击选栏出现或隐藏
+    $("#typeSelect>li").click(function () {
+        var val = $(".typeContent")[0].style.display;
+        if(val == 'none'){
+            $(".typeContent").show();
+        }
+        else{
+            $(".typeContent").hide();
+        }
+
+    });
+    $(".typeContent>li").click(function (e) {
+
+        // 交换span和下面li里的内容
+        var temp = $("#typeSelect>li")[0].innerText;
+        var tempValue = $("#typeSelect>li")[0].value;
+        console.log(temp);
+        $("#typeSelect>li")[0].innerText = $(this)[0].innerText;
+        $("#typeSelect>li")[0].value = $(this)[0].value;
+        console.log($("#typeSelect>li")[0].value);
+        $(this)[0].innerText = temp;
+        $(this)[0].value = tempValue;
+        // console.log($(".typeContent")[0]);
+        $(".typeContent").hide();
+
+        // 添加小三角行下标
+        var div = $("<div></div>");
+        $(div[0]).addClass("transition");
+        console.log(div[0]);
+        $("#typeSelect>li")[0].append(div[0]);
+    });
+
+
+    $(function () {
+        $("#upfile").click(function () {
+            $("#file").click();
+        })
+
+    });
+
+   //显示图片
+    function updateImg(e) {
+        console.log(e);
+        console.log($("#file"));
+
+        //获取文件
+        var file = $("#file")[0].files[0];
+
+        if (file) {
+            //创建读取文件的对象
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //创建文件读取相关的变量
+            var imgFile;
+
+            //为文件读取成功设置事件
+            reader.onload = function (e) {
+                // alert('文件读取完成');
+                imgFile = e.target.result; //获取当前文件的内容
+                // console.log(imgFile);
+                $(".imgView").attr('src', imgFile);
+                $(".imgView").css("display", "inline-block");
+                $(".buttonBox").css("background-color", "#FF9933");
+                $(".buttonBox").text("重新上传");
+                $(".tipBox").css("display", "none");
+
+            };
+            // reader.readAsDataURL(file);
+
+        }
+
+
+        //正式读取文件
+
+
+    }
+
+    // var upfile = document.getElementById('upfile');
+    // upfile.onclick = function (ev) {
+    //     upfile.style.backgroundColor = 'ff9d11';
+    // }
+</script>
+
+
+<script src="https://cdn.bootcss.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="../../public/js/RichEditor/bootstrap-wysiwyg.js"></script>
+<script src="../../public/js/RichEditor/jquery.hotkeys.js"></script>
+<script src="../../public/js/RichEditor/prettify.js"></script>
+<script src="../../public/js/RichEditor.js"></script>
+
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!--个人中心-->
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/js/layer.js"></script>
+
+    <link rel="stylesheet" href="../../public/css/banner.css">
+    <link rel="stylesheet" href="../../public/css/banner_small.css">
+
+    <style>
+        .topNavigation{
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+
+        .topNavigation-bg{
+            height: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contentLeft">
+    <!--轮播-->
+    <div id="swiperOutBox">
+        <div class="swiper-container" id="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-color: rebeccapurple">
+                    <img src="http://img.dwstatic.com/wuxia/1806/393166820519/1529212298765.png">
+                </div>
+                <div class="swiper-slide" style="background-color: blue">
+                    <img src="http://img.dwstatic.com/wuxia/1805/390442042396/1526486983052.png">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <!--<div class="swiper-button-prev hiddenButton"></div>-->
+            <!--<div class="swiper-button-next hiddenButton"></div>-->
+        </div>
+    </div>
+    <div class="blurBox">
+        <h2 id="blurTitle" style="z-index: 2">asdasdadad</h2>
+        <p id="blurContent" style="z-index: 2">asdasdasdasdadadadadadadasdasdasdasdasdasdasdadadadasdsasdasda</p>
+        <span style="z-index: 2" class="timeSpan">2018-1-1</span>
+        <span style="z-index: 2" class="viewSpan">浏览量124563</span>
+        <div class="blurBoxAfter"></div>
+    </div>
+    <div id="allNews" style="background-color: whitesmoke">
+        <!--导航条-->
+        <ul class="slideUl" style="margin-bottom: 0.3rem">
+            <li>最新</li>
+            <li>热点新闻</li>
+            <!--<li>项目报告</li>-->
+            <!--<li>精英视点</li>-->
+            <!--<li>行业会展</li>-->
+            <!--<li>行业政策</li>-->
+            <!--<li>项目专访</li>-->
+        </ul>
+
+        <!--新闻内容-->
+        <div class="contentBox">
+                    <span>
+                        <img class="newsPic" src="https://www.xcj.com/uploads/20180718/617651171b502c82dee64f8122d5a436.jpg">
+                    </span>
+            <span class="contentBrief">
+                        <a><h2>qwdasdqweqwdasZx</h2></a>
+                        <p>asdasdasdadadsadasdadasdaddadadasdadas</p>
+                        <span class="smallSpan">
+                            <span class="contentUserSpan">
+                                <img class="contentHeadPic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2859410315,1608202772&fm=27&gp=0.jpg">
+                                <p>name</p>
+                            </span>
+                            <span>time</span>
+                            <span>浏览量</span>
+                            <span></span>
+                        </span>
+                    </span>
+        </div>
+
+        <div class="contentBox">
+                    <span>
+                        <img class="newsPic" src="https://www.xcj.com/uploads/20180716/66dc67e8fa7e0fe1cb1885ae1f64f20c.png">
+                    </span>
+            <span class="contentBrief">
+                        <a><h2>qwdasdqweqwdasZx</h2></a>
+                        <p>asdasdasdadadsadasdadasdaddadadasdadas</p>
+                        <span class="smallSpan">
+
+                            <span class="contentUserSpan">
+                                <img class="contentHeadPic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2859410315,1608202772&fm=27&gp=0.jpg">
+                                <p>name</p>
+                            </span>
+                            <span>time</span>
+                            <span>浏览量</span>
+                            <span></span>
+                        </span>
+                    </span>
+        </div>
+        <div class="loadBox" onclick="addNews()">加载更多</div>
+        <div style="background-color: whitesmoke;width: 100%;height: 0.5rem"></div>
+    </div>
+</div>
+<div class="contentRight">
+    <div class="hotArticles">
+        <div class="hotTitle">热门标题</div>
+        <ul class="hotUl">
+            <li>
+                <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                <span><a href="http://www.baicu.com">asdadadasds</a></span>
+            </li>
+            <li>
+                <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                <span><a href="http://www.baicu.com">asdadadasds</a></span>
+            </li>
+            <li>
+                <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                <span><a href="http://www.baicu.com">asdadadasds</a></span>
+            </li>
+            <li>
+                <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                <span><a href="http://www.baicu.com">asdadadasds</a></span>
+            </li>
+            <li>
+                <img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">
+                <span><a href="http://www.baicu.com">asdadadasds</a></span>
+            </li>
+            <!--<li>-->
+            <!--<img src="https://www.xcj.com/uploads/20180704/78cbc6de9a4eb9a37b0fd7d08d9c2120.jpg">-->
+            <!--<span>asdadadasds</span>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</div>
+</div>
+
+<!--<div class="foot">-->
+    <!--<div class="aboutOurBox">-->
+        <!--<ul>-->
+            <!--<li>关于我们</li>-->
+            <!--<li>服务条款</li>-->
+            <!--<li>联系我们</li>-->
+            <!--<li>意见反馈</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<img src="../../public/images/footer.png">-->
+
+<!--</div>-->
+
+
+</body>
+</html>
+
+<script>
+
+    $(function(){
+
+        banner = $("<div class=\"topNavigation-bg\">\n" +
+            "\n" +
+            "</div><div class=\"topNavigation\">\n" +
+            "    <img class=\"logo\" src=\"../../public/imgs/logo.jpg\">\n" +
+            "    <ul class=\"loginAndRegister\">\n" +
+            "\n" +
+            "        <a href=\"http://www.baidu.com\">\n" +
+            "            <li  class=\"userLi\">\n" +
+            "                <img class=\"user\" src=\"../../public/imgs/user.png\">\n" +
+            "            </li>\n" +
+            "        </a>\n" +
+            "\n" +
+            "\n" +
+            "        <!--登陆连接-->\n" +
+            "        <a href=\"/login\" class=\"transitionA\"><li>登陆</li></a>\n" +
+            "\n" +
+            "        <li>|</li>\n" +
+            "\n" +
+            "        <!--注册链接-->\n" +
+            "        <a href=\"/regis\" class=\"transitionA\"><li>注册</li></a>\n" +
+            "\n" +
+            "        <li class=\"writeLi\">写文章</li>\n" +
+            "    </ul>\n" +
+            "</div>\n");
+        $("html").prepend(banner);
+
+
+        // footer = $("<div class=\"foot\">\n" +
+        //     "    <div class=\"aboutOurBox\">\n" +
+        //     "        <ul>\n" +
+        //     "            <li>关于我们</li>\n" +
+        //     "            <li>服务条款</li>\n" +
+        //     "            <li>联系我们</li>\n" +
+        //     "            <li>意见反馈</li>\n" +
+        //     "        </ul>\n" +
+        //     "    </div>\n" +
+        //     "    <img src=\"../../public/images/footer.png\">\n" +
+        //     "\n" +
+        //     "</div>")
+        // $("body").append(footer);
+    });
+</script>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>
+
+<script src="../../public/js/index.js"></script>

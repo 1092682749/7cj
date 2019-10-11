@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../public/css/personalCenter.css">
+    <link rel="stylesheet" href="../../public/css/personalCenter_small.css" media="all and (max-width:650px)">
+
+    <link rel="stylesheet" href="../../public/css/banner.css">
+    <link rel="stylesheet" href="../../public/css/banner_small.css">
+    <title>我的文章</title>
+    <style>
+        body{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="topNavigation">
+    <a href='/'><img  class="logo" src="../../public/images/logo1.jpg"></a>
+</div>
+    <div class="main">
+        <div class="content">
+
+            <div class="p_lf">
+                <ul >
+                    <li class="user_data">
+                        <a class="p_lf_a" href="personalCenter"><i></i>个人资料</a>
+                    </li>
+                    <li class="user_article "><a class="p_lf_a a_show" href=""><i></i>我的文章</a></li>
+                    <!--<li class="user_info"><a class="p_lf_a" href="message"><i></i>消息中心</a></li>-->
+                    <!--<li><a class="p_lf_a" href=""><i></i>绑定邮箱</a></li>-->
+                    <!--<li class="user_phone"><a class="p_lf_a" href="bindPhone"><i></i>绑定手机</a></li>-->
+                    <li class="user_reset"><a class="p_lf_a" href="alterPass"><i></i>修改密码</a></li>
+                </ul>
+            </div>
+
+            <div class="p_rt">
+
+                <div class="user_article_hd">
+                    <ul class="user_article_menu">
+                        <li id="showAll" class="show">全部</li>
+                        <li id="showWaitAudit">待审核</li>
+                        <li id="release">已发布</li>
+                        <li id="notPass">未通过</li>
+                        <!--<li>草稿</li>-->
+                    </ul>
+                    <!--<a id="myArticleA" class="user_article_home">我的文章</a>-->
+                </div>
+
+                <div id="articleTable" class="user_article_table">
+
+                    <div class="user_article_table_hd">
+                        <span>#</span>
+                        <span id="cover">封面/标题</span>
+                        <span id="title">标题</span>
+                        <span id="lastTime">最后更新时间</span>
+                        <span>浏览量</span>
+                        <!--<span>评论</span>-->
+                        <span>状态</span>
+                        <span>操作</span>
+                    </div>
+
+                    <div id="tableBox" class="user_article_table_box">
+                        <!--<div class="user_article_table_bd">-->
+                            <!--<span id="sort">01</span>-->
+                            <!--<span>-->
+                                <!--<img id="articleCover" class="user_article_table_img" src="http://t2.hddhhn.com/uploads/tu/201707/521/83.jpg" alt="">-->
+                                <!--<i id="articleTitle" class="user_article_table_i">sdfgh</i>-->
+                            <!--</span>-->
+                            <!--<span id="addTime">2018-7-22 18:32:20</span>-->
+                            <!--<span id="readNumber">0</span>-->
+                            <!--&lt;!&ndash;<span>0</span>&ndash;&gt;-->
+                            <!--<span class="user_article_table_wait">待审核</span>-->
+                            <!--<span><i><a href="">预览</a></i></span>-->
+                        <!--</div>-->
+
+                        <!--<div class="user_article_table_bd">-->
+                            <!--<span>01</span>-->
+                            <!--<span>-->
+                                <!--<img class="user_article_table_img" src="http://t2.hddhhn.com/uploads/tu/201707/521/83.jpg" alt="">-->
+                                <!--<i class="user_article_table_i">sdfgh</i>-->
+                            <!--</span>-->
+                            <!--<span>2018-7-22 18:32:20</span>-->
+                            <!--<span>0</span>-->
+                            <!--&lt;!&ndash;<span>0</span>&ndash;&gt;-->
+                            <!--<span class="user_article_table_fail">未通过</span>-->
+                            <!--<span><i><a href="">修改</a>/<a href="">删除</a></i></span>-->
+                        <!--</div>-->
+
+                        <!--<div class="user_article_table_bd">-->
+                            <!--<span>01</span>-->
+                            <!--<span>-->
+                                <!--<img class="user_article_table_img" src="http://t2.hddhhn.com/uploads/tu/201707/521/83.jpg" alt="">-->
+                                <!--<i class="user_article_table_i">sdfgh</i>-->
+                            <!--</span>-->
+                            <!--<span>2018-7-22 18:32:20</span>-->
+                            <!--<span>0</span>-->
+                            <!--&lt;!&ndash;<span>0</span>&ndash;&gt;-->
+                            <!--<span class="user_article_table_success">已通过</span>-->
+                            <!--<span><i><a href="">预览</a><a href="">修改</a>/<a href="">删除</a></i></span>-->
+                        <!--</div>-->
+
+                        <!--<div id="" class="user_article_table_no">-->
+                            <!--<p>没有相关文章</p>-->
+                        <!--</div>-->
+                            <div id="pageBox" class="loadBox">加载更多</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>
+<script type="text/javascript" src="../../public/js/layer.js"></script>
+<script type="text/javascript" src="../../public/js/personalArticle.js"></script>
+<script>
+    $(function () {
+        $("body").css("opacity","1")
+    })
+</script>

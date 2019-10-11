@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="/public/css/index.css/">
+    <link href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/login.css">
+    <link rel="stylesheet" href="../../public/css/login_small.css" media="screen and (max-width:650px)">
+
+    <link rel="stylesheet" href="../../public/css/banner.css">
+    <link rel="stylesheet" href="../../public/css/banner_small.css">
+    <script type="text/javascript" src="../../public/js/zi.js"></script>
+    <title>登录</title>
+
+</head>
+
+<body>
+    <!--&lt;!&ndash;顶部导航栏&ndash;&gt;-->
+    <!--<div class="topNavigation">-->
+        <!--<img class="logo" src="../../public/imgs/logo.png">-->
+        <!--<ul class="loginAndRegister">-->
+
+            <!--<a href="http://www.baidu.com">-->
+                <!--<li  class="userLi">-->
+                    <!--<img class="user" src="../../public/imgs/user.png">-->
+                <!--</li>-->
+            <!--</a>-->
+
+
+            <!--&lt;!&ndash;登陆连接&ndash;&gt;-->
+            <!--<a href="/login" class="transitionA"><li>登陆</li></a>-->
+
+            <!--<li>|</li>-->
+
+            <!--&lt;!&ndash;注册链接&ndash;&gt;-->
+            <!--<a href="/regis" class="transitionA"><li>注册</li></a>-->
+
+            <!--<li class="writeLi">写文章</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <!--登录-->
+    <div class="main">
+        <div class="page">
+            <p class="p-register">会员登录</p>
+
+            <input id="mail" class="inputbox" type="text" required placeholder="手机号码"  maxlength="11" oninput="testphone()" onclick="changecolor(this)">
+
+            <input id="pass" class="inputbox" type="password" required placeholder="密码" oninput="check()" onclick="changecolor(this)">
+
+            <!--<input id="pass" class="inputbox" type="password" required placeholder="密码"oninput="check()" onclick="changecolor(this)">-->
+
+            <button id="login_button" class="buttonbox" onclick="login()">登录</button>
+
+            <a id="a_forgotps" href="/sys/forgotPass">忘记密码？</a>
+
+            <span class="span_foot">还没有账号？<a class="a_regis" href="/regis">立即注册</a></span>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>
+<script type="text/javascript" src="../../public/js/layer.js"></script>
+<script src="../../public/js/login.js"></script>
+<script>
+
+</script>
+
+
+

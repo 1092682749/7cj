@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<swiper indicator-dots="true" autoplay="true" interval="3000" circular='true'>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image mode='aspectFill' src="{{item.coverimg}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='index-scroll'>
+  <view class='{{selectSlide == item.cid ? "index-slide-show index-div" : "index-div"}}' wx:for="{{navList}}" bindtap='changeBody' data-index='{{item.cid}}'>{{item.name}}</view>
+  <!-- <view style='left:{{selectSlide*120 + "rpx"}}' class='index-slide'></view> -->
+</view>
+
+<view class='index-content'>
+  <view class='index-content-body' wx:for="{{dataList}}" data-item="{{item}}" bindtap='goToDetail'>
+    <image src='{{item.coverimg}}' wx:if="{{selectSlide != 7}}" class='index-content-cover' mode="aspectFill"></image>
+    <view class='{{selectSlide != 7 ? "index-content-right" : "index-content-right index-content-all"}}'>
+      <text class='index-content-title'>{{item.atitle}}</text>
+      <view class='index-content-bottom'>
+        <view>来源: {{item.source}}</view>
+        <view><image mode="aspectFit" src='/utils/imgs/article-timer.png'></image>{{item.showtime}}</view>
+        <view><image mode="aspectFit" src='/utils/imgs/article-look.png'></image>{{item.readnumber}}</view>
+      </view>
+    </view>
+  </view>
+  <text wx:if="{{noMoreData}}" class='no-more-data'>暂无数据...</text>
+</view>

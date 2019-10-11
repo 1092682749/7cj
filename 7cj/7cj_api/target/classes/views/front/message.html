@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/personalCenter.css">
+    <style>
+
+        .message-title{
+            display: flex;
+            flex-direction: row;
+            background-color: #EEEEEE;
+        }
+        .message-title *{
+            font-size: 13px;
+            display: flex;
+            line-height: 2.2rem;
+            /*flex-direction: row;*/
+            justify-content: center;
+        }
+        .message-title-id{
+            width: 6%;
+        }
+        .message-title-type{
+            width: 15%;
+        }
+        .message-title-text{
+            width: 60%;
+        }
+        .message-title-time{
+            width: 19%;
+        }
+        .message-title-operation{
+            width: 10%;
+        }
+        .message-body{
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid #E1E0E1;
+
+        }
+        .message-body *{
+            font-size: 14px;
+            word-break: keep-all;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            line-height: 3.5rem;
+            justify-content: center;
+        }
+
+        .message-body .message-title-type{
+            box-sizing: border-box;
+            background: url(../../public/images/svg/user-horn.svg) no-repeat left center;
+        }
+        .message-body .message-title-operation{
+            color: #ff9d11;
+            padding-left: 18px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background: url(../../public/images/svg/user-infor-open.svg) no-repeat 22px center;
+        }
+        .message-body .message-title-operation:after{
+            background: url(../../public/images/svg/user-infor-close.svg) no-repeat 22px center;
+        }
+        .user-infor-table-box{
+            padding: 29px 85px;
+            overflow: hidden;
+            display: block;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 14px;
+            color: #333333;
+            line-height: 28px;
+            background: rgba(225, 224, 225, .21);
+
+
+        }
+        .message-title-head{
+            font-size: 20px;
+            color: #333333;
+            line-height: 20px;
+            margin: 31px 0 20px
+        }
+    </style>
+
+    <link rel="stylesheet" href="../../public/css/banner.css">
+    <link rel="stylesheet" href="../../public/css/banner_small.css">
+</head>
+<body>
+
+<div class="main">
+    <div class="content">
+
+        <div class="p_lf">
+            <ul >
+                <li class="user_data">
+                    <a class="p_lf_a" href="personalCenter"><i></i>个人资料</a>
+                </li>
+                <li class="user_article "><a class="p_lf_a" href="personalArticle"><i></i>我的文章</a></li>
+                <li class="user_info"><a class="p_lf_a  a_show" href=""><i></i>消息中心</a></li>
+                <!--<li><a class="p_lf_a" href=""><i></i>绑定邮箱</a></li>-->
+                <!--<li class="user_phone"><a class="p_lf_a" href="bindPhone"><i></i>绑定手机</a></li>-->
+                <li class="user_reset"><a class="p_lf_a" href="alterPass"><i></i>修改密码</a></li>
+            </ul>
+        </div>
+
+        <div class="p_rt">
+<div class="modify-box">
+    <div class="message-title-head">消息中心</div>
+    <div class="message-title">
+        <span class="message-title-id">ID</span><span class="message-title-type">类型</span>
+        <span class="message-title-text">标题/内容</span><span class="message-title-time">时间</span><span class="message-title-operation">操作</span>
+    </div>
+
+    <div class="message-body">
+        <span class="message-title-id">1</span><span class="message-title-type">用户账号</span>
+        <span class="message-title-text">【成功注册账号】恭喜您！您于2018-07-18 21:19:37 成功注册</span><span class="message-title-time">2018/07/18 21:19:37</span><span class="message-title-operation">展开</span>
+    </div>
+    <div class="user-infor-table-box">
+        恭喜您！您于2018-07-18 21:19:37 成功注册账号，并成为新财经的忠实用户，我们将为你提供最专业的区块链信息服务。完善个人资料
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>

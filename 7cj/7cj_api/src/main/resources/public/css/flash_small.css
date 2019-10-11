@@ -1,0 +1,9 @@
+.fl_main .comment li:first-child{
+    margin-left: 0;
+}
+.fl_main .comment li{
+    font-size: 10px;
+}
+.fl_main .comment li:nth-child(3):hover .social-share{
+    display: none;
+}

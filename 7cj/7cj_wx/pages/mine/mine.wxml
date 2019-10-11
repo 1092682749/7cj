@@ -1,0 +1,16 @@
+<!--pages/mine/mine.wxml-->
+<view class='mine-head'>
+  <view wx:if="{{userInfo}}">
+    <image src='{{userInfo.info ? imgUrl + userInfo.info : "/utils/imgs/user.gif"}}' mode='aspectFill'></image>
+    <text>{{userInfo.nickname ? userInfo.nickname : '暂无昵称'}}</text>
+  </view>
+  <view wx:if="{{!userInfo}}">
+    <image src='/utils/imgs/user.gif' mode='aspectFill'></image>
+    <text>暂无昵称</text>
+  </view>
+</view>
+<view class='mine-list'>
+  <button-list text="个人资料" bindmyevent="goToInfo"></button-list>
+  <button-list text="我的文章" bindmyevent="goToArticle"></button-list>
+  <button-list text="修改密码" bindmyevent="goToPwd"></button-list>  
+</view>

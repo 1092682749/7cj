@@ -1,0 +1,28 @@
+/* components/button-list/button-list.wxss */
+.button-list{
+  background-color: white;
+  padding: 20rpx;
+  position: relative;
+  border-bottom: 1px solid rgb(232, 232, 232);
+}
+.button-list:active{
+  background-color: rgba(153,153,153, .2);
+}
+image{
+  width: 45rpx;
+  vertical-align: middle;
+}
+text{
+  padding-left: 20rpx;
+  font-size: 28rpx;
+  vertical-align: middle;
+}
+.button-right{
+  width: 18rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

@@ -1,0 +1,94 @@
+.blurBox{
+    display: none;
+}
+.topNavigation-bg{
+    height: 0!important;
+}
+#swiper-container{
+    width: 100%;
+    height: 15rem;
+}
+.swiper-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.contentLeft{
+    width: 100%;
+}
+.contentRight{
+    width: 0;
+}
+.content{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    /*position: absolute;*/
+    /*top: 4rem;*/
+    /*left: 0;*/
+}
+.contentBox{
+    height: 5.5rem;
+}
+.contentBox h2{
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.content p{
+    font-size: 0.6rem;
+}
+.contentHeadPic{
+    width: 1.5rem;
+    height: 1.5rem;
+    display: none;
+}
+.smallSpan{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem;
+    width: 58%;
+    font-size: 10px;
+}
+.contentBrief{
+    width: 58%;
+}
+.smallSpan .contentUserSpan{
+    display: flex!important;
+    align-items: center;
+    width: 65px !important;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.smallSpan span{
+    /*width: 30%;*/
+}
+.content{
+    /*display: none;*/
+    opacity: 0;
+}
+.contentBox>span:first-child{
+    width: 32%;
+    height: 80px;
+    object-fit: cover;
+    margin: 0 0.7rem 0 .5rem;
+}
+.slideUl{
+    display: flex;
+    justify-content: space-around;
+}
+.fontUl li{
+    margin-right: 1rem;
+}
+.intro{
+    margin: 0 30px;
+}

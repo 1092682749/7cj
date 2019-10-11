@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "button-list": "../../components/button-list/button-list"
+  }
+}

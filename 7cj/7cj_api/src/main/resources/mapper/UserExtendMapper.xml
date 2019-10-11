@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qy.admin.dao.UserExtendMapper">
+  <resultMap id="BaseResultMap" type="com.qy.model.UserExtend">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="trade" jdbcType="VARCHAR" property="trade" />
+    <result column="mytoken" jdbcType="VARCHAR" property="mytoken" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="info" jdbcType="VARCHAR" property="info" />
+  </resultMap>
+
+  <update id="updateByUid">
+    UPDATE qy_user_extend SET name = ?,trade = ?,mytoken = ?,country = ?,address =?,info =? WHERE uid = ?
+  </update>
+
+  <select id="findUserByUid" parameterType="string" resultType="com.qy.model.UserExtend">
+    select *from qy_user_extend where uid = #{uid}
+  </select>
+</mapper>

@@ -1,0 +1,6 @@
+<!--components/button-list/button-list.wxml-->
+<view class='button-list' bindtap='buttonClick'>
+  <!-- <image mode="widthFix" wx:if="{{img}}" src='{{img}}'></image> -->
+  <text>{{text}}</text>
+  <image wx:if="{{!hideRight}}" class='button-right' src='http://www.bestjarvan.top/project/image/Enter@3x.png'></image>
+</view>

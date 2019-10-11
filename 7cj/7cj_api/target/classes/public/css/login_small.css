@@ -1,0 +1,19 @@
+.page{
+    width: 80%;
+}
+.main div.regis_page{
+    height: 520px;
+}
+.p-register{
+    height: 50px;
+    line-height: 50px;
+}
+.inputbox {
+    width: 80%;
+}
+.verifybox{
+    font-size: 5px;
+}
+.buttonbox{
+    width: 85%;
+}

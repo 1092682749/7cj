@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../public/css/personalCenter.css">
+    <link rel="stylesheet" href="../../public/css/personalCenter_small.css" media="all and (max-width:650px)">
+    <link rel="stylesheet" href="../../public/css/banner.css">
+    <link rel="stylesheet" href="../../public/css/banner_small.css">
+    <title>修改密码</title>
+
+
+</head>
+<style>
+    .modify-box {
+        width: 100%;
+    }
+
+    .process {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .process div {
+        /*margin: 3rem;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .process div div {
+        margin: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #79BE5F;
+        color: white;
+        border-radius: 50%;
+    }
+
+    .process div span {
+        color: #79BE5F;
+    }
+
+    .line1 {
+        top: 28px;
+        position: absolute;
+        height: 0;
+        width: 24%;
+        border-top: #79BE5F solid 2px;
+        right: 556px;
+    }
+
+    .line2 {
+        top: 28px;
+        position: absolute;
+        height: 0;
+        width: 23%;
+        border-top: #79BE5F solid 2px;
+        right: 333px;
+    }
+
+    .line3 {
+        top: 28px;
+        position: absolute;
+        height: 0;
+        width: 22%;
+        border-top: #79BE5F solid 2px;
+        right: 113px;
+    }
+
+    .page {
+        margin-top: 100px;
+        position: relative;
+        margin-left: 25%;
+        width: 50%;
+        height: 450px;
+        /*margin: auto;*/
+        background-color: #FFFFFF;
+        text-align: center;
+        /*border:solid 0.5px 	#D8D8D8 ;*/
+    }
+
+    .page * {
+        display: inline-block;
+        width: 70%;
+        height: 40px;
+        margin-top: 20px;
+    }
+
+    .inputbox {
+        text-align: left;
+        padding-left: 5%;
+        border: solid 0.5px #D8D8D8;
+    }
+
+    .buttonbox {
+        width: 75%;
+        height: 40px;
+        text-align: center;
+        border: 0;
+        color: #F0F0F0;
+        background-color: #FF9933;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #inVerify {
+        width: 65%;
+        text-align: left;
+        height: 36px;
+        margin-top: 3px;
+        border: 0;
+        padding: 0;
+    }
+
+    .verifybox {
+        width: 30%;
+        float: right;
+        height: 33px;
+        margin-top: 5px;
+        margin-right: 1px;
+        padding: 0;
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 0;
+        border-left: solid 1px #D8D8D8;
+        background-color: #FFFFFF;
+        color: #FF9933;
+        cursor: pointer;
+    }
+
+    #phone {
+        pointer-events: none;
+    }
+
+    .p_rt h2 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #383838;
+        padding-top: 19px;
+        margin: 0 60px 70px;
+        line-height: 40px;
+        border-bottom: solid 1px #E1E0E1;
+    }
+
+
+</style>
+<body>
+<div class="topNavigation">
+    <a href='/'><img  class="logo" src="../../public/images/logo1.jpg"></a>
+</div>
+<div class="main">
+    <div class="content">
+
+        <div class="p_lf">
+            <ul>
+                <li class="user_data">
+                    <a class="p_lf_a" href="personalCenter"><i></i>个人资料</a>
+                </li>
+                <li class="user_article "><a class="p_lf_a" href="personalArticle"><i></i>我的文章</a></li>
+                <!--<li class="user_info"><a class="p_lf_a " href="message"><i></i>消息中心</a></li>-->
+                <!--<li><a class="p_lf_a" href=""><i></i>绑定邮箱</a></li>-->
+                <!--<li class="user_phone"><a class="p_lf_a" href="bindPhone"><i></i>绑定手机</a></li>-->
+                <li class="user_reset"><a class="p_lf_a  a_show" href=""><i></i>修改密码</a></li>
+            </ul>
+        </div>
+
+        <div class="p_rt">
+            <h2>修改密码</h2>
+
+            <div class="modify-box">
+
+                <!--<div class="process">-->
+                <!--<span class="line1"></span>-->
+                <!--<span class="line2"></span>-->
+                <!--<span class="line3"></span>-->
+                <!--&lt;!&ndash;<div class="line1"></div>&ndash;&gt;-->
+                <!--<div><div>1</div><span>输入登录账号</span></div>-->
+                <!--<div><div>2</div><span>验证身份</span></div>-->
+                <!--<div><div>3</div><span>设置新密码</span></div>-->
+                <!--<div><div>4</div><span>完成</span></div>-->
+                <!--</div>-->
+                <div class="page" style=height:600px>
+                    <input type="hidden" id="userID">
+                    <input id="phone" class="inputbox" type="tel" placeholder="手机号码" onclick="changecolor(this)">
+
+                    <div class="inputbox" onclick="changecolor(this)">
+                        <input id="inVerify" type="text" readonly onfocus="this.removeAttribute('readonly');"
+                               placeholder="输入验证码">
+                        <input id="gettime" class="verifybox" type="button" style="outline:none" value="获取验证码"
+                               onclick="sendcode()">
+                    </div>
+
+                    <input id="pass" class="inputbox" type="password" readonly
+                           onfocus="this.removeAttribute('readonly');" placeholder="输入新密码" onclick="changecolor(this)">
+
+                    <button id="button" class="buttonbox" data-type="register">提交修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../public/js/banner_footer.js"></script>
+
+<script type="text/javascript" src="../../public/js/layer.js"></script>
+<script>
+    var inputArry = document.getElementsByClassName('inputbox');
+    var inVerify = document.getElementById('inVerify');
+    var button = document.getElementById("button");
+
+    function changecolor(y) {
+        for (var i = 0; i < inputArry.length; i++) {
+            inputArry[i].style.outline = 0;
+            inputArry[i].style.borderColor = '#D8D8D8';
+            inVerify.style.outline = 0;
+        }
+        y.style.borderColor = '#FF9933';
+    }
+
+    var userId;
+    var userPhone;
+
+
+    function sendcode() {
+
+        $.ajax({
+            type: "POST",
+            data: {
+                "phone": $("#phone").val()
+            },
+            dataType: "json",
+            url: "/sys/sms/sendSMS",
+            success: function (result) {
+                if (result.code === 0) {
+                    layer.msg("验证码发送成功！注意查收！")
+                }
+            }
+        });
+
+        settime($("#gettime").get(0))
+
+    }
+
+
+    var countDown = 60;
+
+    function settime(time) {
+
+        if (countDown == 0) {
+            time.removeAttribute("disabled");
+            time.value = "获取验证码";
+            countDown = 60;
+            return false;
+        } else {
+            time.setAttribute("disabled", true);
+            time.value = "已发送" + countDown + "s";
+            countDown--;
+        }
+        setTimeout(function () {
+            settime(time);
+        }, 1000);
+    }
+
+    $(function () {
+        $.ajax({
+
+                type: "GET",
+                url: "/getUserIdPhoneForAlter",
+                success: function (result) {
+                    userId = result.userID;
+                    userPhone = result.userPhone;
+                    $("#phone").val(userPhone);
+                }
+
+            }
+        )
+
+
+        function alterPass() {
+            var username = $("#phone").val();
+            console.log(username);
+            var password = $("#pass").val();
+            var code = $("#inVerify").val();
+            console.log(password);
+
+            $.ajax({
+                type: "POST",
+                data: {
+                    "phone": username,
+                    "code": $("#inVerify").val()
+                },
+                dataType: "json",
+                url: "/sys/sms/checkSMS",
+                success: function (result) {
+                    if (result.code === 0) {
+                        // layer.msg("验证码发送成功！注意查收！")
+
+                        $.ajax({
+                            type: "POST",
+                            data: {
+                                "id": userId,
+                                "password": $("#pass").val()
+                                // "vcode": $("#inVerify").val()
+                            },
+                            dataType: "json",
+                            url: "/ajaxAlterpass",
+                            success: function (result) {
+                                console.log(result);
+                                if (result.status != 200) {
+                                    layer.msg(result.message)
+                                    // alert("账户或密码错误")
+                                    // swal("哦豁",result.message,"error");
+                                } else {
+                                    layer.msg(result.message)
+                                }
+                            }
+                        });
+                    } else if (result.code === 152) {
+                        layer.msg("验证码不正确")
+                    }
+                }
+            })
+
+        }
+
+        $("#inVerify").click().attr("border-color", "#FF9933");
+
+        $("#button").click(function () {
+
+            $.ajax({
+                    type: "POST",
+                    data: {
+                        "phone": $("#phone").val(),
+                        "code": $("#inVerify").val()
+                    },
+                    dataType: "json",
+                    url: "/sys/sms/checkSMS",
+                    success: function (result) {
+                        if (result.code === 0) {
+
+                            $.ajax({
+                                type: "POST",
+                                data: {
+                                    "id": userId,
+                                    "password": $("#pass").val(),
+                                    "vcode": $("#inVerify").val()
+                                },
+                                dataType: "json",
+                                url: "/ajaxAlterpass",
+                                success: function (result) {
+                                    console.log(result);
+                                    if (result.status != 200) {
+                                        layer.msg(result.message);
+                                        // alert("账户或密码错误")
+                                        // swal("哦豁",result.message,"error");
+                                    } else {
+                                        layer.msg(result.message);
+                                        setTimeout(function () {
+                                            location.href = "personalCenter.html";
+                                        }, 1000);
+                                    }
+                                }
+                            });
+                        } else if (result.code === 152) {
+                            layer.msg("验证码不正确")
+                        }
+                    }
+                }
+            )
+
+
+        })
+    })
+</script>
